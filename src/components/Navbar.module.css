@@ -1,0 +1,129 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 16px 0;
+  transition: var(--transition-smooth);
+}
+
+.scrolled {
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 10px 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.logoIcon {
+  font-size: 1.4rem;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logoText {
+  letter-spacing: -0.5px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.link:hover {
+  color: var(--text-primary);
+}
+
+.active {
+  color: var(--text-primary);
+}
+
+.activeDot {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-1);
+  box-shadow: 0 0 8px var(--accent-1);
+}
+
+.ctaBtn {
+  padding: 10px 24px;
+  font-size: 0.85rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  padding: 20px 24px;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--glass-border);
+  overflow: hidden;
+}
+
+.mobileLink {
+  display: block;
+  padding: 12px 0;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition-fast);
+}
+
+.mobileLink:hover {
+  color: var(--text-primary);
+  padding-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .links,
+  .ctaBtn {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .mobileMenu {
+    display: flex;
+  }
+}
