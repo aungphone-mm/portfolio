@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full Stack Developer Portfolio 🚀
 
-## Getting Started
+A sleek, performant, and modern web developer portfolio built with Next.js 14, React, and Framer Motion. 
+Features English & Burmese (Myanmar) language toggling and a beautiful glassmorphic UI.
 
-First, run the development server:
+## ✨ Features
+
+- **Modern Glassmorphic UI**: Beautiful blurry glass cards, animated orbs, and smooth gradients.
+- **Language Toggle (EN/MY)**: Built-in localization support directly swapping English to Burmese seamlessly across all components with context providers.
+- **Project Filtering**: Categorized project showcase (Full Stack, AI, Analytics, etc).
+- **Smooth Animations**: Powered by `framer-motion` for springy reveals, hover states, and smooth scrolling.
+- **Contact API Route**: Built-in Next.js App Router API `POST` endpoint simulating contact form submission with loading, success, and error UI states.
+- **Fully Responsive**: Crafted carefully for desktop, tablet, and mobile viewing.
+- **SEO Optimized**: Metadata API integration for OpenGraph and Twitter cards.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js (App Router)](https://nextjs.org/)
+- **Library**: [React 19](https://react.dev/)
+- **Styling**: Pure CSS Modules (`/app/globals.css` with CSS custom properties)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Fonts**: Inter (English) & Padauk (Burmese) via Google Fonts
+
+## 🚀 Getting Started
+
+First, install the dependencies using `npm`:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the portfolio!
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+├── src/
+│   ├── app/           # Next.js App Router (pages, layout, globals.css, API routes)
+│   ├── components/    # Reusable UI components (Hero, Navbar, Projects, Contact, etc.)
+│   ├── context/       # React Context Providers (LanguageContext)
+│   ├── data/          # Constant data definitions (portfolioData.js)
+│   └── lib/           # Utility functions and dictionaries (translations.js)
+```
 
-## Learn More
+## 📝 Customization
 
-To learn more about Next.js, take a look at the following resources:
+1. **Content**: Edit `src/data/portfolioData.js` to change projects, links, and contact details.
+2. **Translations**: Edit `src/lib/translations.js` to change text or add a new language layer.
+3. **Theme**: Modify CSS variables in `src/app/globals.css` to instantly change the coloring scheme across the entire platform.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+_Crafted with ❤️ and lots of coffee._

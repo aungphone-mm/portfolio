@@ -61,32 +61,24 @@ export const translations = {
     titlePrefix: { en: 'Featured', my: 'ထင်ရှားသော' },
     titleHighlight: { en: 'Work', my: 'လက်ရာများ' },
     subtitle: { en: 'A selection of projects that showcase my skills and passion', my: 'ကျွန်ုပ်၏ကျွမ်းကျင်မှုနှင့် စိတ်အားထက်သန်မှုကို ပြသသော ပရောဂျက်အချို့' },
-    list: [
-      {
-        desc: {
-          en: 'A full-featured online store with real-time inventory, Stripe payments, and an admin dashboard. Built with modern tech stack for optimal performance.',
-          my: 'အချိန်နှင့်တပြေးညီ ကုန်ပစ္စည်းစာရင်း၊ Stripe ငွေပေးချေမှုနှင့် admin ဒက်ရှ်ဘုတ်ပါဝင်သော အွန်လိုင်းစတိုးံ။ အကောင်းဆုံးစွမ်းဆောင်ရည်အတွက် ခေတ်မီနည်းပညာဖြင့် တည်ဆောက်ထားပါသည်။'
-        }
+    descriptions: {
+      'ecommerce': {
+        en: 'A full-featured online store with real-time inventory, Stripe payments, and an admin dashboard. Built with modern tech stack for optimal performance.',
+        my: 'အချိန်နှင့်တပြေးညီ ကုန်ပစ္စည်းစာရင်း၊ Stripe ငွေပေးချေမှုနှင့် admin ဒက်ရှ်ဘုတ်ပါဝင်သော အွန်လိုင်းစတိုးံ။ အကောင်းဆုံးစွမ်းဆောင်ရည်အတွက် ခေတ်မီနည်းပညာဖြင့် တည်ဆောက်ထားပါသည်။'
       },
-      {
-        desc: {
-          en: 'Smart productivity app that uses AI to prioritize tasks, suggest deadlines, and auto-categorize work items for maximum efficiency.',
-          my: 'လုပ်ငန်းစွမ်းဆောင်ရည်အမြင့်ဆုံးဖြစ်စေရန် AI အသုံးပြု၍ အလုပ်များကို ဦးစားပေးစီစဉ်ခြင်း၊ အချိန်သတ်မှတ်ချက်များ အကြံပြုခြင်းနှင့် အလုပ်အမျိုးအစား အလိုအလျောက်ခွဲခြားပေးသော စမတ်ကျသည့် application။'
-        }
+      'ai-task': {
+        en: 'Smart productivity app that uses AI to prioritize tasks, suggest deadlines, and auto-categorize work items for maximum efficiency.',
+        my: 'လုပ်ငန်းစွမ်းဆောင်ရည်အမြင့်ဆုံးဖြစ်စေရန် AI အသုံးပြု၍ အလုပ်များကို ဦးစားပေးစီစဉ်ခြင်း၊ အချိန်သတ်မှတ်ချက်များ အကြံပြုခြင်းနှင့် အလုပ်အမျိုးအစား အလိုအလျောက်ခွဲခြားပေးသော စမတ်ကျသည့် application။'
       },
-      {
-        desc: {
-          en: 'Real-time analytics platform that aggregates social media metrics, generates insights, and creates automated reports with beautiful visualizations.',
-          my: 'ဆိုရှယ်မီဒီယာ မက်ထရစ်များကို စုစည်းကာ ခွဲခြမ်းစိတ်ဖြာမှုများ ဖော်ထုတ်ပြီး လှပသော ပုံဖော်ချက်များဖြင့် အစီရင်ခံစာများကို အလိုအလျောက်ဖန်တီးပေးသည့် အချိန်နှင့်တပြေးညီ ခွဲခြမ်းစိတ်ဖြာမှု platform။'
-        }
+      'analytics': {
+        en: 'Real-time analytics platform that aggregates social media metrics, generates insights, and creates automated reports with beautiful visualizations.',
+        my: 'ဆိုရှယ်မီဒီယာ မက်ထရစ်များကို စုစည်းကာ ခွဲခြမ်းစိတ်ဖြာမှုများ ဖော်ထုတ်ပြီး လှပသော ပုံဖော်ချက်များဖြင့် အစီရင်ခံစာများကို အလိုအလျောက်ဖန်တီးပေးသည့် အချိန်နှင့်တပြေးညီ ခွဲခြမ်းစိတ်ဖြာမှု platform။'
       },
-      {
-        desc: {
-          en: 'Secure cloud storage solution with drag-and-drop upload, file sharing, real-time collaboration, and end-to-end encryption.',
-          my: 'လုံခြုံစိတ်ချရသော cloud သိုလှောင်မှုစနစ်ဖြစ်ပြီး ဆွဲချတင်ခြင်း၊ ဖိုင်မျှဝေခြင်း၊ အချိန်နှင့်တပြေးညီ ပူးပေါင်းလုပ်ဆောင်ခြင်းနှင့် end-to-end ကုဒ်ဝှက်ခြင်းတို့ ပါဝင်ပါသည်။'
-        }
+      'cloud-storage': {
+        en: 'Secure cloud storage solution with drag-and-drop upload, file sharing, real-time collaboration, and end-to-end encryption.',
+        my: 'လုံခြုံစိတ်ချရသော cloud သိုလှောင်မှုစနစ်ဖြစ်ပြီး ဆွဲချတင်ခြင်း၊ ဖိုင်မျှဝေခြင်း၊ အချိန်နှင့်တပြေးညီ ပူးပေါင်းလုပ်ဆောင်ခြင်းနှင့် end-to-end ကုဒ်ဝှက်ခြင်းတို့ ပါဝင်ပါသည်။'
       }
-    ],
+    },
     demo: { en: 'Live Demo', my: 'အစမ်းကြည့်ရန်' },
     source: { en: 'Source', my: 'ရင်းမြစ်ကုဒ်' }
   },
@@ -107,7 +99,9 @@ export const translations = {
     formMessage: { en: 'Message', my: 'မက်ဆေ့ချ်' },
     formMessagePlaceholder: { en: 'Tell me about your project...', my: 'သင့်ပရောဂျက်အကြောင်း ပြောပြပါ...' },
     sendMsg: { en: 'Send Message', my: 'မက်ဆေ့ချ်ပို့ရန်' },
-    msgSent: { en: 'Message Sent! ✓', my: 'မက်ဆေ့ချ်ပို့ပြီးပါပြီ! ✓' }
+    sending: { en: 'Sending...', my: 'ပို့နေသည်...' },
+    msgSent: { en: 'Message Sent! ✓', my: 'မက်ဆေ့ချ်ပို့ပြီးပါပြီ! ✓' },
+    msgError: { en: 'Failed to send!', my: 'မက်ဆေ့ချ်ပို့ရန် မအောင်မြင်ပါ!' }
   },
   footer: {
     tagline: { en: 'Crafting digital experiences with passion and precision.', my: 'စိတ်အားထက်သန်မှုနှင့် တိကျသေချာမှုဖြင့် ဒီဂျစ်တယ်အတွေ့အကြုံများကို ဖန်တီးနေပါသည်။' },

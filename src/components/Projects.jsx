@@ -1,47 +1,21 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { portfolioData } from '@/data/portfolioData';
 import styles from './Projects.module.css';
-
-const projects = [
-  {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured online store with real-time inventory, Stripe payments, and an admin dashboard. Built with modern tech stack for optimal performance.',
-    tech: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
-    color: '#7c3aed',
-    demo: '#',
-    source: '#',
-  },
-  {
-    title: 'AI Task Manager',
-    description: 'Smart productivity app that uses AI to prioritize tasks, suggest deadlines, and auto-categorize work items for maximum efficiency.',
-    tech: ['React', 'Python', 'OpenAI', 'FastAPI'],
-    color: '#06b6d4',
-    demo: '#',
-    source: '#',
-  },
-  {
-    title: 'Social Analytics Dashboard',
-    description: 'Real-time analytics platform that aggregates social media metrics, generates insights, and creates automated reports with beautiful visualizations.',
-    tech: ['Vue.js', 'D3.js', 'Express', 'MongoDB'],
-    color: '#ec4899',
-    demo: '#',
-    source: '#',
-  },
-  {
-    title: 'Cloud File Manager',
-    description: 'Secure cloud storage solution with drag-and-drop upload, file sharing, real-time collaboration, and end-to-end encryption.',
-    tech: ['React', 'AWS S3', 'Node.js', 'Redis'],
-    color: '#f59e0b',
-    demo: '#',
-    source: '#',
-  },
-];
 
 export default function Projects() {
   const { t, mounted } = useLanguage();
+  const [activeFilter, setActiveFilter] = useState('All');
+  
+  const categories = ['All', 'Full Stack', 'AI', 'Analytics', 'Cloud'];
+
+  const filteredProjects = portfolioData.projects.filter(project => {
+    return activeFilter === 'All' ? true : project.category === activeFilter;
+  });
 
   return (
     <section id="projects" className="section">
@@ -66,16 +40,30 @@ export default function Projects() {
           )}
         </motion.div>
 
-        <div className={styles.grid}>
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              className={`glass-card ${styles.card}`}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+        <div className={styles.filterContainer}>
+          {mounted && categories.map(category => (
+            <button
+              key={category}
+              className={`${styles.filterBtn} ${activeFilter === category ? styles.filterActive : ''}`}
+              onClick={() => setActiveFilter(category)}
             >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <motion.div layout className={styles.grid}>
+          <AnimatePresence>
+            {filteredProjects.map((project, i) => (
+              <motion.div
+                key={project.id}
+                layout
+                className={`glass-card ${styles.card}`}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4 }}
+              >
               <div
                 className={styles.cardAccent}
                 style={{ background: `linear-gradient(135deg, ${project.color}20, transparent)` }}
@@ -85,7 +73,7 @@ export default function Projects() {
               </div>
 
               <h3 className={styles.cardTitle}>{project.title}</h3>
-              <p className={styles.cardDesc}>{mounted ? t('projects', 'list', i).desc : ''}</p>
+              <p className={styles.cardDesc}>{mounted ? t('projects', 'descriptions')[project.id] : ''}</p>
 
               <div className={styles.techStack}>
                 {project.tech.map(t => (
@@ -109,9 +97,10 @@ export default function Projects() {
               <div className={styles.cardArrow}>
                 <ArrowUpRight size={20} style={{ color: project.color }} />
               </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

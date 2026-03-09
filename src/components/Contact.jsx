@@ -2,20 +2,39 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
+import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter, Loader2 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { portfolioData } from '@/data/portfolioData';
 import styles from './Contact.module.css';
 
 export default function Contact() {
   const { t, mounted } = useLanguage();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle, submitting, success, error
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
-    setFormData({ name: '', email: '', message: '' });
+    setStatus('submitting');
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 4000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 4000);
+      }
+    } catch (error) {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -54,7 +73,7 @@ export default function Contact() {
                 <div className={styles.infoIcon}><Mail size={20} /></div>
                 <div>
                   <div className={styles.infoLabel}>{mounted ? t('contact', 'email') : ''}</div>
-                  <div className={styles.infoValue}>hello@example.com</div>
+                  <div className={styles.infoValue}>{portfolioData.contact.email}</div>
                 </div>
               </div>
               <div className={`glass-card ${styles.infoCard}`}>
@@ -68,7 +87,7 @@ export default function Contact() {
                 <div className={styles.infoIcon}><Phone size={20} /></div>
                 <div>
                   <div className={styles.infoLabel}>{mounted ? t('contact', 'phone') : ''}</div>
-                  <div className={styles.infoValue}>+95 9 xxx xxx xxx</div>
+                  <div className={styles.infoValue}>{portfolioData.contact.phone}</div>
                 </div>
               </div>
             </div>
@@ -76,9 +95,9 @@ export default function Contact() {
             <div className={styles.socialSection}>
               <h4 className={styles.socialTitle}>{mounted ? t('contact', 'follow') : ''}</h4>
               <div className={styles.socialLinks}>
-                <a href="#" className={styles.socialLink} aria-label="GitHub"><Github size={20} /></a>
-                <a href="#" className={styles.socialLink} aria-label="LinkedIn"><Linkedin size={20} /></a>
-                <a href="#" className={styles.socialLink} aria-label="Twitter"><Twitter size={20} /></a>
+                <a href={portfolioData.social.github} className={styles.socialLink} aria-label="GitHub"><Github size={20} /></a>
+                <a href={portfolioData.social.linkedin} className={styles.socialLink} aria-label="LinkedIn"><Linkedin size={20} /></a>
+                <a href={portfolioData.social.twitter} className={styles.socialLink} aria-label="Twitter"><Twitter size={20} /></a>
               </div>
             </div>
           </motion.div>
@@ -125,10 +144,18 @@ export default function Contact() {
                 value={formData.message}
                 onChange={e => setFormData({ ...formData, message: e.target.value })}
                 required
+                minLength={10}
               />
             </div>
-            <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-              {sent ? (mounted ? t('contact', 'msgSent') : 'Message Sent! ✓') : <>{mounted ? t('contact', 'sendMsg') : ''} <Send size={16} /></>}
+            <button 
+              type="submit" 
+              className={`btn btn-primary ${styles.submitBtn}`}
+              disabled={status === 'submitting'}
+            >
+              {status === 'submitting' && <><Loader2 size={16} className="animate-spin" /> {mounted ? t('contact', 'sending') : 'Sending...'}</>}
+              {status === 'success' && (mounted ? t('contact', 'msgSent') : 'Message Sent! ✓')}
+              {status === 'error' && (mounted ? t('contact', 'msgError') : 'Failed to send!')}
+              {status === 'idle' && <>{mounted ? t('contact', 'sendMsg') : ''} <Send size={16} /></>}
             </button>
           </motion.form>
         </div>
