@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './Contact.module.css';
 
 export default function Contact() {
+  const { t, mounted } = useLanguage();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
 
@@ -26,13 +28,17 @@ export default function Contact() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Contact</span>
-          <h2 className="section-title">
-            Let&apos;s <span className="gradient-text">Connect</span>
-          </h2>
-          <p className="section-subtitle">
-            Have a project in mind? Let&apos;s work together to create something amazing.
-          </p>
+          {mounted && (
+            <>
+              <span className="section-label">{t('contact', 'label')}</span>
+              <h2 className="section-title">
+                {t('contact', 'titlePrefix')} <span className="gradient-text">{t('contact', 'titleHighlight')}</span>
+              </h2>
+              <p className="section-subtitle">
+                {t('contact', 'subtitle')}
+              </p>
+            </>
+          )}
         </motion.div>
 
         <div className={styles.wrapper}>
@@ -47,28 +53,28 @@ export default function Contact() {
               <div className={`glass-card ${styles.infoCard}`}>
                 <div className={styles.infoIcon}><Mail size={20} /></div>
                 <div>
-                  <div className={styles.infoLabel}>Email</div>
+                  <div className={styles.infoLabel}>{mounted ? t('contact', 'email') : ''}</div>
                   <div className={styles.infoValue}>hello@example.com</div>
                 </div>
               </div>
               <div className={`glass-card ${styles.infoCard}`}>
                 <div className={styles.infoIcon}><MapPin size={20} /></div>
                 <div>
-                  <div className={styles.infoLabel}>Location</div>
-                  <div className={styles.infoValue}>Yangon, Myanmar</div>
+                  <div className={styles.infoLabel}>{mounted ? t('contact', 'location') : ''}</div>
+                  <div className={styles.infoValue}>{mounted ? t('contact', 'locationValue') : ''}</div>
                 </div>
               </div>
               <div className={`glass-card ${styles.infoCard}`}>
                 <div className={styles.infoIcon}><Phone size={20} /></div>
                 <div>
-                  <div className={styles.infoLabel}>Phone</div>
+                  <div className={styles.infoLabel}>{mounted ? t('contact', 'phone') : ''}</div>
                   <div className={styles.infoValue}>+95 9 xxx xxx xxx</div>
                 </div>
               </div>
             </div>
 
             <div className={styles.socialSection}>
-              <h4 className={styles.socialTitle}>Follow Me</h4>
+              <h4 className={styles.socialTitle}>{mounted ? t('contact', 'follow') : ''}</h4>
               <div className={styles.socialLinks}>
                 <a href="#" className={styles.socialLink} aria-label="GitHub"><Github size={20} /></a>
                 <a href="#" className={styles.socialLink} aria-label="LinkedIn"><Linkedin size={20} /></a>
@@ -86,35 +92,35 @@ export default function Contact() {
             onSubmit={handleSubmit}
           >
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="name">Name</label>
+              <label className={styles.label} htmlFor="name">{mounted ? t('contact', 'formName') : ''}</label>
               <input
                 id="name"
                 type="text"
                 className={styles.input}
-                placeholder="Your name"
+                placeholder={mounted ? t('contact', 'formNamePlaceholder') : ''}
                 value={formData.name}
                 onChange={e => setFormData({ ...formData, name: e.target.value })}
                 required
               />
             </div>
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="email">Email</label>
+              <label className={styles.label} htmlFor="email">{mounted ? t('contact', 'formEmail') : ''}</label>
               <input
                 id="email"
                 type="email"
                 className={styles.input}
-                placeholder="your@email.com"
+                placeholder={mounted ? t('contact', 'formEmailPlaceholder') : ''}
                 value={formData.email}
                 onChange={e => setFormData({ ...formData, email: e.target.value })}
                 required
               />
             </div>
             <div className={styles.formGroup}>
-              <label className={styles.label} htmlFor="message">Message</label>
+              <label className={styles.label} htmlFor="message">{mounted ? t('contact', 'formMessage') : ''}</label>
               <textarea
                 id="message"
                 className={`${styles.input} ${styles.textarea}`}
-                placeholder="Tell me about your project..."
+                placeholder={mounted ? t('contact', 'formMessagePlaceholder') : ''}
                 rows={5}
                 value={formData.message}
                 onChange={e => setFormData({ ...formData, message: e.target.value })}
@@ -122,7 +128,7 @@ export default function Contact() {
               />
             </div>
             <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-              {sent ? 'Message Sent! ✓' : <>Send Message <Send size={16} /></>}
+              {sent ? (mounted ? t('contact', 'msgSent') : 'Message Sent! ✓') : <>{mounted ? t('contact', 'sendMsg') : ''} <Send size={16} /></>}
             </button>
           </motion.form>
         </div>

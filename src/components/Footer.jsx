@@ -1,9 +1,12 @@
 'use client';
 
 import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './Footer.module.css';
 
 export default function Footer() {
+  const { t, mounted } = useLanguage();
+
   return (
     <footer className={styles.footer}>
       <div className="glow-line" />
@@ -14,16 +17,20 @@ export default function Footer() {
             <span>Portfolio</span>
           </a>
           <p className={styles.tagline}>
-            Crafting digital experiences with passion and precision.
+            {mounted ? t('footer', 'tagline') : ''}
           </p>
         </div>
 
         <div className={styles.center}>
           <div className={styles.linkGroup}>
-            <a href="#about" className={styles.footerLink}>About</a>
-            <a href="#skills" className={styles.footerLink}>Skills</a>
-            <a href="#projects" className={styles.footerLink}>Projects</a>
-            <a href="#contact" className={styles.footerLink}>Contact</a>
+            {mounted && (
+              <>
+                <a href="#about" className={styles.footerLink}>{t('nav', 'about')}</a>
+                <a href="#skills" className={styles.footerLink}>{t('nav', 'skills')}</a>
+                <a href="#projects" className={styles.footerLink}>{t('nav', 'projects')}</a>
+                <a href="#contact" className={styles.footerLink}>{t('nav', 'contact')}</a>
+              </>
+            )}
           </div>
         </div>
 
@@ -38,9 +45,9 @@ export default function Footer() {
 
       <div className={`container ${styles.bottom}`}>
         <p className={styles.copyright}>
-          © {new Date().getFullYear()} Portfolio. Made with{' '}
+          {mounted ? t('footer', 'copyright1') : ''} {new Date().getFullYear()} {mounted ? t('footer', 'copyright2') : ''}{' '}
           <Heart size={14} className={styles.heart} />{' '}
-          and lots of coffee.
+          {mounted ? t('footer', 'copyright3') : ''}
         </p>
       </div>
     </footer>

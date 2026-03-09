@@ -3,36 +3,37 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './Hero.module.css';
 
-const roles = ['Full Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Creative Thinker'];
-
 export default function Hero() {
+  const { t, mounted } = useLanguage();
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const currentRole = roles[roleIndex];
+    if (!mounted) return;
+    
+    // t('hero', 'roles', roleIndex) returns the translated current role
+    const currentRole = t('hero', 'roles', roleIndex) || '';
     let timeout;
 
     if (!isDeleting && displayText === currentRole) {
       timeout = setTimeout(() => setIsDeleting(true), 2000);
     } else if (isDeleting && displayText === '') {
       setIsDeleting(false);
-      setRoleIndex((prev) => (prev + 1) % roles.length);
+      setRoleIndex((prev) => (prev + 1) % 4); // 4 roles
     } else {
       timeout = setTimeout(() => {
         setDisplayText(
           isDeleting
-            ? currentRole.substring(0, displayText.length - 1)
-            : currentRole.substring(0, displayText.length + 1)
         );
       }, isDeleting ? 40 : 80);
     }
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, roleIndex]);
+  }, [displayText, isDeleting, roleIndex, mounted, t]);
 
   return (
     <section id="hero" className={styles.hero}>
@@ -48,7 +49,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <span className={styles.badgeDot} />
-          Available for work
+          {mounted ? t('hero', 'badge') : ''}
         </motion.div>
 
         <motion.h1
@@ -57,10 +58,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          Hi, I&apos;m{' '}
-          <span className="gradient-text">Creative</span>
+          {mounted ? t('hero', 'titlePrefix') : ''}
+          <span className="gradient-text">{mounted ? t('hero', 'titleCreative') : ''}</span>
           <br />
-          <span className="gradient-text">Developer</span>
+          <span className="gradient-text">{mounted ? t('hero', 'titleDeveloper') : ''}</span>
         </motion.h1>
 
         <motion.div
@@ -79,8 +80,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          I craft beautiful, performant digital experiences that delight users
-          and drive business growth. Passionate about clean code and elegant design.
+          {mounted ? t('hero', 'description') : ''}
         </motion.p>
 
         <motion.div
@@ -89,13 +89,17 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
         >
-          <a href="#projects" className="btn btn-primary">
-            View My Work
-            <ArrowDown size={18} />
-          </a>
-          <a href="#contact" className="btn btn-outline">
-            Get In Touch
-          </a>
+          {mounted && (
+            <a href="#projects" className="btn btn-primary">
+              {t('hero', 'btnPrimary')}
+              <ArrowDown size={18} />
+            </a>
+          )}
+          {mounted && (
+            <a href="#contact" className="btn btn-outline">
+              {t('hero', 'btnOutline')}
+            </a>
+          )}
         </motion.div>
 
         <motion.div

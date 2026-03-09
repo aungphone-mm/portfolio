@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Padauk:wght@400;700&display=swap');
 
 /* ===== CSS Custom Properties ===== */
 :root {
@@ -23,6 +23,7 @@
   --gradient-warm: linear-gradient(135deg, #ec4899, #f59e0b);
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-burmese: 'Padauk', 'Inter', -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   --radius-sm: 8px;
@@ -63,6 +64,23 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.lang-my,
+body.lang-my h1,
+body.lang-my h2,
+body.lang-my h3,
+body.lang-my h4,
+body.lang-my h5,
+body.lang-my h6,
+body.lang-my .btn,
+body.lang-my .logoText,
+body.lang-my .nav-link,
+body.lang-my .section-label,
+body.lang-my p,
+body.lang-my span,
+body.lang-my a {
+  font-family: var(--font-burmese) !important;
 }
 
 ::selection {

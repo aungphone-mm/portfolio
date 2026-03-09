@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './Skills.module.css';
 
 const skillCategories = [
   {
-    title: 'Frontend',
+    categoryKey: 'frontend',
     color: '#7c3aed',
     skills: [
       { name: 'React / Next.js', level: 90 },
@@ -15,7 +16,7 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Backend',
+    categoryKey: 'backend',
     color: '#06b6d4',
     skills: [
       { name: 'Python / Django', level: 85 },
@@ -25,7 +26,7 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Tools & DevOps',
+    categoryKey: 'tools',
     color: '#ec4899',
     skills: [
       { name: 'Git / GitHub', level: 90 },
@@ -35,7 +36,7 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Design & Other',
+    categoryKey: 'design',
     color: '#f59e0b',
     skills: [
       { name: 'Figma / Adobe XD', level: 80 },
@@ -47,6 +48,8 @@ const skillCategories = [
 ];
 
 export default function Skills() {
+  const { t, mounted } = useLanguage();
+
   return (
     <section id="skills" className="section" style={{ background: 'var(--bg-secondary)' }}>
       <div className="container">
@@ -57,19 +60,23 @@ export default function Skills() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Skills</span>
-          <h2 className="section-title">
-            My <span className="gradient-text">Tech Stack</span>
-          </h2>
-          <p className="section-subtitle">
-            Technologies and tools I use to bring ideas to life
-          </p>
+          {mounted && (
+            <>
+              <span className="section-label">{t('skills', 'label')}</span>
+              <h2 className="section-title">
+                {t('skills', 'titlePrefix')} <span className="gradient-text">{t('skills', 'titleHighlight')}</span>
+              </h2>
+              <p className="section-subtitle">
+                {t('skills', 'subtitle')}
+              </p>
+            </>
+          )}
         </motion.div>
 
         <div className={styles.grid}>
           {skillCategories.map((cat, catIndex) => (
             <motion.div
-              key={cat.title}
+              key={cat.categoryKey}
               className={`glass-card ${styles.card}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +88,7 @@ export default function Skills() {
                   className={styles.cardDot}
                   style={{ background: cat.color, boxShadow: `0 0 12px ${cat.color}40` }}
                 />
-                <h3 className={styles.cardTitle}>{cat.title}</h3>
+                <h3 className={styles.cardTitle}>{mounted ? t('skills', 'categories')[cat.categoryKey] : ''}</h3>
               </div>
 
               <div className={styles.skillList}>

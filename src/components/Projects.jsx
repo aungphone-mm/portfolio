@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './Projects.module.css';
 
 const projects = [
@@ -40,6 +41,8 @@ const projects = [
 ];
 
 export default function Projects() {
+  const { t, mounted } = useLanguage();
+
   return (
     <section id="projects" className="section">
       <div className="container">
@@ -50,13 +53,17 @@ export default function Projects() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Projects</span>
-          <h2 className="section-title">
-            Featured <span className="gradient-text">Work</span>
-          </h2>
-          <p className="section-subtitle">
-            A selection of projects that showcase my skills and passion
-          </p>
+          {mounted && (
+            <>
+              <span className="section-label">{t('projects', 'label')}</span>
+              <h2 className="section-title">
+                {t('projects', 'titlePrefix')} <span className="gradient-text">{t('projects', 'titleHighlight')}</span>
+              </h2>
+              <p className="section-subtitle">
+                {t('projects', 'subtitle')}
+              </p>
+            </>
+          )}
         </motion.div>
 
         <div className={styles.grid}>
@@ -78,7 +85,7 @@ export default function Projects() {
               </div>
 
               <h3 className={styles.cardTitle}>{project.title}</h3>
-              <p className={styles.cardDesc}>{project.description}</p>
+              <p className={styles.cardDesc}>{mounted ? t('projects', 'list', i).desc : ''}</p>
 
               <div className={styles.techStack}>
                 {project.tech.map(t => (
@@ -91,11 +98,11 @@ export default function Projects() {
               <div className={styles.cardLinks}>
                 <a href={project.demo} className={styles.cardLink} target="_blank" rel="noopener noreferrer">
                   <ExternalLink size={16} />
-                  Live Demo
+                  {mounted ? t('projects', 'demo') : ''}
                 </a>
                 <a href={project.source} className={styles.cardLink} target="_blank" rel="noopener noreferrer">
                   <Github size={16} />
-                  Source
+                  {mounted ? t('projects', 'source') : ''}
                 </a>
               </div>
 

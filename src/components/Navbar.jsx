@@ -3,17 +3,19 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './Navbar.module.css';
 
 const navLinks = [
-  { name: 'Home', href: '#hero' },
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { key: 'home', href: '#hero' },
+  { key: 'about', href: '#about' },
+  { key: 'skills', href: '#skills' },
+  { key: 'projects', href: '#projects' },
+  { key: 'contact', href: '#contact' },
 ];
 
 export default function Navbar() {
+  const { language, toggleLanguage, t, mounted } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -53,23 +55,35 @@ export default function Navbar() {
         </a>
 
         <div className={styles.links}>
-          {navLinks.map(link => (
+          {mounted && navLinks.map(link => (
             <a
-              key={link.name}
+              key={link.key}
               href={link.href}
               className={`${styles.link} ${activeSection === link.href.replace('#', '') ? styles.active : ''}`}
             >
-              {link.name}
+              {t('nav', link.key)}
               {activeSection === link.href.replace('#', '') && (
                 <motion.span className={styles.activeDot} layoutId="activeDot" />
               )}
             </a>
           ))}
+          
+          {mounted && (
+            <button className={styles.langToggle} onClick={toggleLanguage} aria-label="Toggle Language">
+              <div className={`${styles.langPill} ${language === 'my' ? styles.langMy : ''}`}>
+                <span>EN</span>
+                <span>MY</span>
+                <div className={styles.langScroller} />
+              </div>
+            </button>
+          )}
         </div>
 
-        <a href="#contact" className={`btn btn-primary ${styles.ctaBtn}`}>
-          Let&apos;s Talk
-        </a>
+        {mounted && (
+          <a href="#contact" className={`btn btn-primary ${styles.ctaBtn}`}>
+            {t('nav', 'cta')}
+          </a>
+        )}
 
         <button
           className={styles.hamburger}
@@ -89,9 +103,9 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {navLinks.map((link, i) => (
+            {mounted && navLinks.map((link, i) => (
               <motion.a
-                key={link.name}
+                key={link.key}
                 href={link.href}
                 className={styles.mobileLink}
                 initial={{ opacity: 0, x: -20 }}
@@ -99,17 +113,33 @@ export default function Navbar() {
                 transition={{ delay: i * 0.05 }}
                 onClick={() => setMobileOpen(false)}
               >
-                {link.name}
+                {t('nav', link.key)}
               </motion.a>
             ))}
-            <a
-              href="#contact"
-              className="btn btn-primary"
-              style={{ marginTop: '16px', width: '100%', justifyContent: 'center' }}
-              onClick={() => setMobileOpen(false)}
-            >
-              Let&apos;s Talk
-            </a>
+            
+            {mounted && (
+              <div className={styles.mobileLangToggle}>
+                <span className={styles.mobileLangLabel}>Language</span>
+                <button className={styles.langToggle} onClick={toggleLanguage}>
+                  <div className={`${styles.langPill} ${language === 'my' ? styles.langMy : ''}`}>
+                    <span>EN</span>
+                    <span>MY</span>
+                    <div className={styles.langScroller} />
+                  </div>
+                </button>
+              </div>
+            )}
+
+            {mounted && (
+              <a
+                href="#contact"
+                className="btn btn-primary"
+                style={{ marginTop: '16px', width: '100%', justifyContent: 'center' }}
+                onClick={() => setMobileOpen(false)}
+              >
+                {t('nav', 'cta')}
+              </a>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
