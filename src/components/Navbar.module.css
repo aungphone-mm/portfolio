@@ -128,6 +128,12 @@
   }
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 /* ===== Language Toggle ===== */
 .langToggle {
   background: none;
@@ -138,7 +144,27 @@
   align-items: center;
   justify-content: center;
   outline: none;
-  font-family: var(--font-sans);
+}
+
+.mobileControls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.mobileControlItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.mobileControlItem span {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .langPill {
@@ -186,16 +212,4 @@
   transform: translateX(30px);
 }
 
-.mobileLangToggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--glass-border);
-}
 
-.mobileLangLabel {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-}

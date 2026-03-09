@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import ThemeToggle from './ThemeToggle';
 import styles from './Navbar.module.css';
 
 const navLinks = [
@@ -69,13 +70,16 @@ export default function Navbar() {
           ))}
           
           {mounted && (
-            <button className={styles.langToggle} onClick={toggleLanguage} aria-label="Toggle Language">
-              <div className={`${styles.langPill} ${language === 'my' ? styles.langMy : ''}`}>
-                <span>EN</span>
-                <span>MY</span>
-                <div className={styles.langScroller} />
-              </div>
-            </button>
+            <div className={styles.controls}>
+              <ThemeToggle />
+              <button className={styles.langToggle} onClick={toggleLanguage} aria-label="Toggle Language">
+                <div className={`${styles.langPill} ${language === 'my' ? styles.langMy : ''}`}>
+                  <span>EN</span>
+                  <span>MY</span>
+                  <div className={styles.langScroller} />
+                </div>
+              </button>
+            </div>
           )}
         </div>
 
@@ -118,15 +122,21 @@ export default function Navbar() {
             ))}
             
             {mounted && (
-              <div className={styles.mobileLangToggle}>
-                <span className={styles.mobileLangLabel}>Language</span>
-                <button className={styles.langToggle} onClick={toggleLanguage}>
-                  <div className={`${styles.langPill} ${language === 'my' ? styles.langMy : ''}`}>
-                    <span>EN</span>
-                    <span>MY</span>
-                    <div className={styles.langScroller} />
-                  </div>
-                </button>
+              <div className={styles.mobileControls}>
+                <div className={styles.mobileControlItem}>
+                  <span>Theme</span>
+                  <ThemeToggle />
+                </div>
+                <div className={styles.mobileControlItem}>
+                  <span>Language</span>
+                  <button className={styles.langToggle} onClick={toggleLanguage}>
+                    <div className={`${styles.langPill} ${language === 'my' ? styles.langMy : ''}`}>
+                      <span>EN</span>
+                      <span>MY</span>
+                      <div className={styles.langScroller} />
+                    </div>
+                  </button>
+                </div>
               </div>
             )}
 
