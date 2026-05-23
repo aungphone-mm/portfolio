@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
+import EmailAssistant from '@/components/EmailAssistant';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -18,6 +19,8 @@ export default function Home() {
         <Skills />
         <hr className="glow-line" />
         <Projects />
+        <hr className="glow-line" />
+        <EmailAssistant />
         <hr className="glow-line" />
         <Contact />
       </main>

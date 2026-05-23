@@ -77,6 +77,10 @@ export const translations = {
       'cloud-storage': {
         en: 'Secure cloud storage solution with drag-and-drop upload, file sharing, real-time collaboration, and end-to-end encryption.',
         my: 'လုံခြုံစိတ်ချရသော cloud သိုလှောင်မှုစနစ်ဖြစ်ပြီး ဆွဲချတင်ခြင်း၊ ဖိုင်မျှဝေခြင်း၊ အချိန်နှင့်တပြေးညီ ပူးပေါင်းလုပ်ဆောင်ခြင်းနှင့် end-to-end ကုဒ်ဝှက်ခြင်းတို့ ပါဝင်ပါသည်။'
+      },
+      'email-assistant': {
+        en: 'AI-powered email writer that transforms raw thoughts into polished emails with six tone options. Built with React, Vite, and the Groq Llama 3.3 API.',
+        my: 'AI ကို အသုံးပြု၍ မူကြမ်းစိတ်ကူးများကို လေသံရွေးချယ်မှုခြောက်မျိုးဖြင့် ပြီးပြည့်စုံသောအီးမေးလ်များအဖြစ် ပြောင်းလဲပေးသော tool ဖြစ်သည်။'
       }
     },
     demo: { en: 'Live Demo', my: 'အစမ်းကြည့်ရန်' },
@@ -102,6 +106,43 @@ export const translations = {
     sending: { en: 'Sending...', my: 'ပို့နေသည်...' },
     msgSent: { en: 'Message Sent! ✓', my: 'မက်ဆေ့ချ်ပို့ပြီးပါပြီ! ✓' },
     msgError: { en: 'Failed to send!', my: 'မက်ဆေ့ချ်ပို့ရန် မအောင်မြင်ပါ!' }
+  },
+  emailAssistant: {
+    label: { en: 'Live Demo', my: 'တိုက်ရိုက်သရုပ်ပြ' },
+    titlePrefix: { en: 'AI Email', my: 'AI အီးမေးလ်' },
+    titleHighlight: { en: 'Assistant', my: 'လက်ထောက်' },
+    subtitle: {
+      en: 'Transform rough thoughts into polished, professional emails instantly. Powered by Llama 3.3.',
+      my: 'မူကြမ်းစိတ်ကူးများကို ချက်ချင်းပင် ပြီးပြည့်စုံသောအာဂျီးမေးလ်များအဖြစ် ပြောင်းလဲပါ။ Llama 3.3 ဖြင့် တည်ဆောက်ထားပါသည်။'
+    },
+    thoughtsLabel: { en: 'Your Thoughts', my: 'သင်၏ အကြောင်းအရာ' },
+    thoughtsPlaceholder: {
+      en: 'e.g. tell john we need to reschedule friday meeting, suggest monday or tuesday...',
+      my: 'ဥပမာ - ကြာသပတေးနေ့ အစည်းအဝေးကို နှောင်းဆိုင်းရမည်ဟု John ကို ပြောပြပါ...'
+    },
+    toneLabel: { en: 'Tone', my: 'လေသံ' },
+    toneProfessional: { en: 'Professional', my: 'ပရော်ဖက်ရှင်နယ်' },
+    toneWarm: { en: 'Warm', my: 'ဖော်ရွေ' },
+    toneConcise: { en: 'Concise', my: 'တိုတောင်း' },
+    toneFormal: { en: 'Formal', my: 'တရားဝင်' },
+    toneCasual: { en: 'Casual', my: 'သာမန်' },
+    tonePersuasive: { en: 'Persuasive', my: 'ဆွဲဆောင်မှုရှိ' },
+    contextShow: { en: '+ Add reply context', my: '+ ပြန်ကြားချက် context ထည့်ရန်' },
+    contextHide: { en: '− Hide reply context', my: '− ပြန်ကြားချက် ဖျောက်ရန်' },
+    contextLabel: { en: 'Original Email (optional)', my: 'မူရင်းအီးမေးလ် (ရွေးချယ်နိုင်)' },
+    contextPlaceholder: {
+      en: 'Paste the email you are replying to...',
+      my: 'ပြန်ကြားရမည့် အီးမေးလ်ကို ဤနေရာတွင် ထည့်ပါ...'
+    },
+    generateBtn: { en: 'Generate Email', my: 'အီးမေးလ် ဖန်တီးရန်' },
+    generating: { en: 'Generating...', my: 'ဖန်တီးနေသည်...' },
+    outputTitle: { en: 'Generated Email', my: 'ဖန်တီးထားသောအီးမေးလ်' },
+    copy: { en: 'Copy', my: 'ကော်ပီကူးရန်' },
+    copied: { en: 'Copied!', my: 'ကော်ပီပြီးပါပြီ!' },
+    placeholder: {
+      en: 'Your polished email will appear here...',
+      my: 'သင်၏ ပြီးပြည့်စုံသောအီးမေးလ် ဤနေရာတွင် ပေါ်လာမည်...'
+    },
   },
   footer: {
     tagline: { en: 'Crafting digital experiences with passion and precision.', my: 'စိတ်အားထက်သန်မှုနှင့် တိကျသေချာမှုဖြင့် ဒီဂျစ်တယ်အတွေ့အကြုံများကို ဖန်တီးနေပါသည်။' },

@@ -35,6 +35,15 @@ export const portfolioData = {
       color: '#f59e0b',
       demo: '#',
       source: '#',
+    },
+    {
+      id: 'email-assistant',
+      title: 'AI Email Assistant',
+      tech: ['React', 'Vite', 'Groq API', 'Express'],
+      category: 'AI',
+      color: '#06b6d4',
+      demo: 'https://my-email-app-eta.vercel.app',
+      source: 'https://github.com/aungphone-mm/my-email-app',
     }
   ],
   contact: {
