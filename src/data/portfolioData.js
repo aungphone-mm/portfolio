@@ -44,6 +44,24 @@ export const portfolioData = {
       color: '#06b6d4',
       demo: 'https://my-email-app-eta.vercel.app',
       source: 'https://github.com/aungphone-mm/my-email-app',
+    },
+    {
+      id: 'yangon-bus',
+      title: 'Yangon Bus Transit App',
+      tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Leaflet'],
+      category: 'Full Stack',
+      color: '#10b981',
+      demo: 'https://ybs-plum.vercel.app',
+      source: 'https://github.com/aungphone-mm/yangon-bus',
+    },
+    {
+      id: 'nextbooking',
+      title: 'Beauty Salon Booking System',
+      tech: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+      category: 'Full Stack',
+      color: '#f43f5e',
+      demo: 'https://nextbooking-cyan.vercel.app/',
+      source: 'https://github.com/aungphone-mm/nextbooking',
     }
   ],
   contact: {

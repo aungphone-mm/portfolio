@@ -81,6 +81,14 @@ export const translations = {
       'email-assistant': {
         en: 'AI-powered email writer that transforms raw thoughts into polished emails with six tone options. Built with React, Vite, and the Groq Llama 3.3 API.',
         my: 'AI ကို အသုံးပြု၍ မူကြမ်းစိတ်ကူးများကို လေသံရွေးချယ်မှုခြောက်မျိုးဖြင့် ပြီးပြည့်စုံသောအီးမေးလ်များအဖြစ် ပြောင်းလဲပေးသော tool ဖြစ်သည်။'
+      },
+      'yangon-bus': {
+        en: 'A PWA for navigating Yangon public transport — search bus stops by name, township, or road, plan routes between locations, and explore 125 routes across 2,093 stops with interactive OpenStreetMap.',
+        my: 'ရန်ကုန်မြို့ ဘတ်စကားများကို လမ်းညွှန်ပေးသော PWA ဖြစ်ပြီး မှတ်တိုင်အမည်၊ မြို့နယ် သို့မဟုတ် လမ်းဖြင့် ရှာဖွေနိုင်ကာ OpenStreetMap ပေါ်တွင် လမ်းကြောင်း ၁၂၅ ခုနှင့် မှတ်တိုင် ၂,၀၉၃ ခုကို ပြသပေးသည်။'
+      },
+      'nextbooking': {
+        en: 'A modern beauty salon booking system where customers book appointments online and admins manage services, staff, and schedules. Built with Next.js, Supabase, and real-time availability checking.',
+        my: 'ဖောက်သည်များ အွန်လိုင်းမှ ချိန်းဆိုနိုင်ပြီး admin များ ဝန်ဆောင်မှုများ၊ ဝန်ထမ်းများနှင့် အချိန်ဇယားများကို စီမံနိုင်သော ခေတ်မီ သင်္ဘောရေကန်ချိန်းဆိုမှုစနစ်။ Next.js နှင့် Supabase ဖြင့် တည်ဆောက်ထားပါသည်။'
       }
     },
     demo: { en: 'Live Demo', my: 'အစမ်းကြည့်ရန်' },

@@ -26,7 +26,7 @@ export default function About() {
         >
           <div className={styles.imageFrame}>
             <div className={styles.imageBorder} />
-            <img src="/profile.png" alt="Profile" className={styles.image} />
+            <img src="/profile.jpg" alt="Profile" className={styles.image} />
           </div>
         </motion.div>
 

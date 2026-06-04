@@ -15,7 +15,7 @@ No test suite is configured.
 
 ## Architecture
 
-This is a **Next.js 16 App Router** single-page portfolio. The entire site renders from `src/app/page.js`, which assembles section components in order: `Navbar → Hero → About → Skills → Projects → Contact → Footer`.
+This is a **Next.js 16 App Router** single-page portfolio. The entire site renders from `src/app/page.js`, which assembles section components in order: `Navbar → Hero → About → Skills → Projects → EmailAssistant → Contact → Footer`.
 
 **Path alias**: `@/` maps to `src/`.
 
