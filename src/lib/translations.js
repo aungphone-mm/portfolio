@@ -62,22 +62,6 @@ export const translations = {
     titleHighlight: { en: 'Work', my: 'လက်ရာများ' },
     subtitle: { en: 'A selection of projects that showcase my skills and passion', my: 'ကျွန်ုပ်၏ကျွမ်းကျင်မှုနှင့် စိတ်အားထက်သန်မှုကို ပြသသော ပရောဂျက်အချို့' },
     descriptions: {
-      'ecommerce': {
-        en: 'A full-featured online store with real-time inventory, Stripe payments, and an admin dashboard. Built with modern tech stack for optimal performance.',
-        my: 'အချိန်နှင့်တပြေးညီ ကုန်ပစ္စည်းစာရင်း၊ Stripe ငွေပေးချေမှုနှင့် admin ဒက်ရှ်ဘုတ်ပါဝင်သော အွန်လိုင်းစတိုးံ။ အကောင်းဆုံးစွမ်းဆောင်ရည်အတွက် ခေတ်မီနည်းပညာဖြင့် တည်ဆောက်ထားပါသည်။'
-      },
-      'ai-task': {
-        en: 'Smart productivity app that uses AI to prioritize tasks, suggest deadlines, and auto-categorize work items for maximum efficiency.',
-        my: 'လုပ်ငန်းစွမ်းဆောင်ရည်အမြင့်ဆုံးဖြစ်စေရန် AI အသုံးပြု၍ အလုပ်များကို ဦးစားပေးစီစဉ်ခြင်း၊ အချိန်သတ်မှတ်ချက်များ အကြံပြုခြင်းနှင့် အလုပ်အမျိုးအစား အလိုအလျောက်ခွဲခြားပေးသော စမတ်ကျသည့် application။'
-      },
-      'analytics': {
-        en: 'Real-time analytics platform that aggregates social media metrics, generates insights, and creates automated reports with beautiful visualizations.',
-        my: 'ဆိုရှယ်မီဒီယာ မက်ထရစ်များကို စုစည်းကာ ခွဲခြမ်းစိတ်ဖြာမှုများ ဖော်ထုတ်ပြီး လှပသော ပုံဖော်ချက်များဖြင့် အစီရင်ခံစာများကို အလိုအလျောက်ဖန်တီးပေးသည့် အချိန်နှင့်တပြေးညီ ခွဲခြမ်းစိတ်ဖြာမှု platform။'
-      },
-      'cloud-storage': {
-        en: 'Secure cloud storage solution with drag-and-drop upload, file sharing, real-time collaboration, and end-to-end encryption.',
-        my: 'လုံခြုံစိတ်ချရသော cloud သိုလှောင်မှုစနစ်ဖြစ်ပြီး ဆွဲချတင်ခြင်း၊ ဖိုင်မျှဝေခြင်း၊ အချိန်နှင့်တပြေးညီ ပူးပေါင်းလုပ်ဆောင်ခြင်းနှင့် end-to-end ကုဒ်ဝှက်ခြင်းတို့ ပါဝင်ပါသည်။'
-      },
       'email-assistant': {
         en: 'AI-powered email writer that transforms raw thoughts into polished emails with six tone options. Built with React, Vite, and the Groq Llama 3.3 API.',
         my: 'AI ကို အသုံးပြု၍ မူကြမ်းစိတ်ကူးများကို လေသံရွေးချယ်မှုခြောက်မျိုးဖြင့် ပြီးပြည့်စုံသောအီးမေးလ်များအဖြစ် ပြောင်းလဲပေးသော tool ဖြစ်သည်။'

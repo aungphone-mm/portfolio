@@ -11,7 +11,7 @@ export default function Projects() {
   const { t, mounted } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('All');
   
-  const categories = ['All', 'Full Stack', 'AI', 'Analytics', 'Cloud'];
+  const categories = ['All', 'Full Stack', 'AI'];
 
   const filteredProjects = portfolioData.projects.filter(project => {
     return activeFilter === 'All' ? true : project.category === activeFilter;
