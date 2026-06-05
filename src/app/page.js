@@ -6,6 +6,7 @@ import Skills from '@/components/Skills';
 import Certifications from '@/components/Certifications';
 import Projects from '@/components/Projects';
 import EmailAssistant from '@/components/EmailAssistant';
+import YangonBusDemo from '@/components/YangonBusDemo';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -27,6 +28,8 @@ export default function Home() {
         <Projects />
         <hr className="glow-line" />
         <EmailAssistant />
+        <hr className="glow-line" />
+        <YangonBusDemo />
         <hr className="glow-line" />
         <Contact />
       </main>

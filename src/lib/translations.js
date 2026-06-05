@@ -115,6 +115,13 @@ export const translations = {
     msgSent: { en: 'Message Sent! ✓', my: 'မက်ဆေ့ချ်ပို့ပြီးပါပြီ! ✓' },
     msgError: { en: 'Failed to send!', my: 'မက်ဆေ့ချ်ပို့ရန် မအောင်မြင်ပါ!' }
   },
+  yangonBus: {
+    label: { en: 'Live Demo', my: 'တိုက်ရိုက်သရုပ်ပြ' },
+    titlePrefix: { en: 'Yangon Bus', my: 'ရန်ကုန်ဘတ်စ်' },
+    titleHighlight: { en: 'Transit App', my: 'စီးနင်းမှုအက်ပ်' },
+    subtitle: { en: 'Search 2,093 bus stops across 125 routes with interactive OpenStreetMap navigation.', my: 'Interactive OpenStreetMap ဖြင့် လမ်းကြောင်း ၁၂၅ ခုရှိ မှတ်တိုင် ၂,၀၉၃ ခုကို ရှာဖွေပါ။' },
+    openFull: { en: 'Open Full', my: 'မျက်နှာပြင်ပြည့်ဖွင့်ရန်' },
+  },
   emailAssistant: {
     label: { en: 'Live Demo', my: 'တိုက်ရိုက်သရုပ်ပြ' },
     titlePrefix: { en: 'AI Email', my: 'AI အီးမေးလ်' },
