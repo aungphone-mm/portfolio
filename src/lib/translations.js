@@ -113,7 +113,8 @@ export const translations = {
     sendMsg: { en: 'Send Message', my: 'မက်ဆေ့ချ်ပို့ရန်' },
     sending: { en: 'Sending...', my: 'ပို့နေသည်...' },
     msgSent: { en: 'Message Sent! ✓', my: 'မက်ဆေ့ချ်ပို့ပြီးပါပြီ! ✓' },
-    msgError: { en: 'Failed to send!', my: 'မက်ဆေ့ချ်ပို့ရန် မအောင်မြင်ပါ!' }
+    msgError: { en: 'Failed to send!', my: 'မက်ဆေ့ချ်ပို့ရန် မအောင်မြင်ပါ!' },
+    trustNote: { en: 'Messages are delivered directly to', my: 'မက်ဆေ့ချ်များကို တိုက်ရိုက်ပို့ဆောင်ပေးပါသည်' }
   },
   yangonBus: {
     label: { en: 'Live Demo', my: 'တိုက်ရိုက်သရုပ်ပြ' },

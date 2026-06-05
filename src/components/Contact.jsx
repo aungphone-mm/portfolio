@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Github, Linkedin, Twitter, Globe, Loader2 } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, Twitter, Globe, Loader2, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { portfolioData } from '@/data/portfolioData';
 import styles from './Contact.module.css';
@@ -141,8 +141,8 @@ export default function Contact() {
                 minLength={10}
               />
             </div>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className={`btn btn-primary ${styles.submitBtn}`}
               disabled={status === 'submitting'}
             >
@@ -151,6 +151,15 @@ export default function Contact() {
               {status === 'error' && (mounted ? t('contact', 'msgError') : 'Failed to send!')}
               {status === 'idle' && <>{mounted ? t('contact', 'sendMsg') : ''} <Send size={16} /></>}
             </button>
+            {mounted && (
+              <div className={styles.trustNote}>
+                <ShieldCheck size={13} />
+                <span>
+                  {t('contact', 'trustNote')}{' '}
+                  <a href="mailto:aungphone.mm@gmail.com">aungphone.mm@gmail.com</a>
+                </span>
+              </div>
+            )}
           </motion.form>
         </div>
       </div>
