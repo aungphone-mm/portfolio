@@ -11,7 +11,7 @@ export default function Projects() {
   const { t, mounted } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('All');
   
-  const categories = ['All', 'Full Stack', 'AI'];
+  const categories = ['All', 'ERP', 'Full Stack', 'AI'];
 
   const filteredProjects = portfolioData.projects.filter(project => {
     return activeFilter === 'All' ? true : project.category === activeFilter;
@@ -84,14 +84,21 @@ export default function Projects() {
               </div>
 
               <div className={styles.cardLinks}>
-                <a href={project.demo} className={styles.cardLink} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink size={16} />
-                  {mounted ? t('projects', 'demo') : ''}
-                </a>
-                <a href={project.source} className={styles.cardLink} target="_blank" rel="noopener noreferrer">
-                  <Github size={16} />
-                  {mounted ? t('projects', 'source') : ''}
-                </a>
+                {project.demo && (
+                  <a href={project.demo} className={styles.cardLink} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink size={16} />
+                    {mounted ? t('projects', 'demo') : ''}
+                  </a>
+                )}
+                {project.source && (
+                  <a href={project.source} className={styles.cardLink} target="_blank" rel="noopener noreferrer">
+                    <Github size={16} />
+                    {mounted ? t('projects', 'source') : ''}
+                  </a>
+                )}
+                {!project.demo && !project.source && mounted && (
+                  <span className={styles.cardLink} style={{ opacity: 0.5, cursor: 'default' }}>Internal Project</span>
+                )}
               </div>
 
               <div className={styles.cardArrow}>

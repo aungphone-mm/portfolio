@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { portfolioData } from '@/data/portfolioData';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -108,13 +109,13 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.9 }}
         >
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
+          <a href={portfolioData.social.github} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="GitHub">
             <Github size={20} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
+          <a href={portfolioData.social.linkedin} target="_blank" rel="noopener noreferrer" className={styles.socialLink} aria-label="LinkedIn">
             <Linkedin size={20} />
           </a>
-          <a href="mailto:hello@example.com" className={styles.socialLink} aria-label="Email">
+          <a href={`mailto:${portfolioData.contact.email}`} className={styles.socialLink} aria-label="Email">
             <Mail size={20} />
           </a>
         </motion.div>

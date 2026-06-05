@@ -6,9 +6,9 @@ import { useLanguage } from '@/context/LanguageContext';
 import styles from './About.module.css';
 
 const statsData = [
-  { icon: <Code2 size={20} />, value: '50+', key: 'projects' },
-  { icon: <Palette size={20} />, value: '3+', key: 'experience' },
-  { icon: <Zap size={20} />, value: '30+', key: 'clients' },
+  { icon: <Code2 size={20} />, value: '20+', key: 'projects' },
+  { icon: <Palette size={20} />, value: '13+', key: 'experience' },
+  { icon: <Zap size={20} />, value: '15+', key: 'clients' },
   { icon: <Coffee size={20} />, value: '∞', key: 'coffee' },
 ];
 

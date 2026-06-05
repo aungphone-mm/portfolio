@@ -2,6 +2,7 @@ export const translations = {
   nav: {
     home: { en: 'Home', my: 'ပင်မစာမျက်နှာ' },
     about: { en: 'About', my: 'ကျွန်ုပ်အကြောင်း' },
+    experience: { en: 'Experience', my: 'အတွေ့အကြုံ' },
     skills: { en: 'Skills', my: 'ကျွမ်းကျင်မှုများ' },
     projects: { en: 'Projects', my: 'ပရောဂျက်များ' },
     contact: { en: 'Contact', my: 'ဆက်သွယ်ရန်' },
@@ -9,33 +10,33 @@ export const translations = {
   },
   hero: {
     badge: { en: 'Available for work', my: 'အလုပ်အတွက် အဆင်သင့်ပါ' },
-    titlePrefix: { en: "Hi, I'm ", my: 'မင်္ဂလာပါ၊ ကျွန်ုပ်မှာ ' },
-    titleCreative: { en: 'Creative', my: 'ဖန်တီးမှုအားကောင်းသော' },
-    titleDeveloper: { en: 'Developer', my: 'ဆော့ဖ်ဝဲရေးသူ ဖြစ်ပါသည်' },
+    titlePrefix: { en: "Hi, I'm ", my: 'မင်္ဂလာပါ၊ ကျွန်ုပ်သည် ' },
+    titleCreative: { en: 'Aung Phone', my: 'အောင်ဖုန်း' },
+    titleDeveloper: { en: 'Developer', my: 'ဆော့ဖ်ဝဲရေးသူ' },
     roles: [
+      { en: 'Odoo ERP Developer', my: 'Odoo ERP ဆော့ဖ်ဝဲရေးသူ' },
       { en: 'Full Stack Developer', my: 'Full Stack ဆော့ဖ်ဝဲရေးသူ' },
-      { en: 'UI/UX Enthusiast', my: 'UI/UX ဝါသနာရှင်' },
+      { en: 'Python Developer', my: 'Python ဆော့ဖ်ဝဲရေးသူ' },
       { en: 'Problem Solver', my: 'ပြဿနာများကို ဖြေရှင်းပေးသူ' },
-      { en: 'Creative Thinker', my: 'ဖန်တီးတွေးခေါ်သူ' }
     ],
     description: {
-      en: 'I craft beautiful, performant digital experiences that delight users and drive business growth. Passionate about clean code and elegant design.',
-      my: 'အသုံးပြုသူများကို နှစ်သက်သဘောကျစေပြီး လုပ်ငန်းဖွံ့ဖြိုးတိုးတက်မှုကို အထောက်အကူပြုသော လှပပြီး စွမ်းဆောင်ရည်မြင့်မားသည့် ဒီဂျစ်တယ်အတွေ့အကြုံများကို ဖန်တီးပေးပါသည်။ သန့်ရှင်းသောကုဒ်နှင့် သပ်ရပ်သောဒီဇိုင်းများကို အထူးစိတ်၀င်စားပါသည်။'
+      en: '13+ years building enterprise software and ERP solutions. Specialized in Odoo module development, Python, and cloud deployment.',
+      my: 'Enterprise ဆော့ဖ်ဝဲနှင့် ERP ဖြေရှင်းချက်များ ၁၃ နှစ်ကျော် တည်ဆောက်ခဲ့ပါသည်။ Odoo module ရေးဆွဲခြင်း၊ Python နှင့် cloud deployment တို့တွင် အထူးကျွမ်းကျင်ပါသည်။'
     },
     btnPrimary: { en: 'View My Work', my: 'ကျွန်ုပ်၏ လက်ရာများကို ကြည့်ရန်' },
     btnOutline: { en: 'Get In Touch', my: 'ဆက်သွယ်ရန်' },
   },
   about: {
     label: { en: 'About Me', my: 'ကျွန်ုပ်အကြောင်း' },
-    titlePrefix: { en: 'Passionate about creating', my: 'ဖန်တီးရန် စိတ်အားထက်သန်သော' },
-    titleHighlight: { en: 'digital experiences', my: 'ဒီဂျစ်တယ်အတွေ့အကြုံများ' },
+    titlePrefix: { en: 'Passionate about building', my: 'တည်ဆောက်ရန် စိတ်အားထက်သန်သော' },
+    titleHighlight: { en: 'enterprise solutions', my: 'စီးပွားရေးဖြေရှင်းချက်များ' },
     p1: {
-      en: "I'm a full-stack developer with a passion for building beautiful, functional, and user-centered digital experiences. With expertise spanning from frontend design to backend architecture, I bring ideas to life through clean code and creative problem-solving.",
-      my: "ကျွန်ုပ်သည် လှပပြီး အသုံးဝင်သော၊ အသုံးပြုသူဗဟိုပြု ဒီဂျစ်တယ်အတွေ့အကြုံများကို တည်ဆောက်ရန် စိတ်အားထက်သန်သည့် full-stack ဆော့ဖ်ဝဲရေးသူ တစ်ဦးဖြစ်ပါသည်။ Frontend ဒီဇိုင်းမှ Backend ဗိသုကာအထိ ကျွမ်းကျင်မှုများဖြင့်၊ သန့်ရှင်းသောကုဒ်နှင့် ဖန်တီးမှုရှိသော ပြဿနာဖြေရှင်းခြင်းမှတဆင့် အိုင်ဒီယာများကို အကောင်အထည်ဖော်ပေးပါသည်။"
+      en: "I'm an Odoo ERP Developer and Full Stack engineer with 13+ years of professional experience building enterprise software solutions. Currently leading development at Mingalarsky Co., Ltd., I specialize in custom Odoo module development, Python backend engineering, and cloud deployment on AWS and DigitalOcean.",
+      my: "လုပ်ငန်းကြိုးပမ်းမှု ၁၃ နှစ်ကျော်ရှိသော Odoo ERP Developer နှင့် Full Stack ဆော့ဖ်ဝဲအင်ဂျင်နီယာ တစ်ဦးဖြစ်ပါသည်။ လက်ရှိတွင် Mingalarsky Co., Ltd. တွင် ဦးဆောင်ဆော့ဖ်ဝဲရေးသူအဖြစ် custom Odoo module ရေးဆွဲခြင်း၊ Python backend နှင့် cloud deployment တို့ကို အထူးပြုလုပ်ဆောင်နေပါသည်။"
     },
     p2: {
-      en: "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee while brainstorming the next big idea.",
-      my: "ကျွန်ုပ်သည် ကုဒ်မရေးသည့်အခါ နည်းပညာအသစ်များကို လေ့လာခြင်း၊ open-source ပရောဂျက်များတွင် ပါဝင်ကူညီခြင်း၊ သို့မဟုတ် နောက်ထပ်အိုင်ဒီယာကောင်းတစ်ခုကို စဉ်းစားရင်း ကော်ဖီသောက်လေ့ရှိပါသည်။"
+      en: "My background spans Odoo ERP systems, web application development, and IT infrastructure — across finance, logistics, hotel management, and media industries. I deliver solutions that balance technical excellence with real business impact.",
+      my: "ကျွန်ုပ်၏ ကျောထောက်နောက်ခံသည် Odoo ERP၊ ဝက်ဘ်အပ်ပလီကေးရှင်းနှင့် IT အခြေခံအဆောက်အဦတို့ကို ဖြတ်သန်းခဲ့ပြီး ဘဏ္ဍာရေး၊ ထောက်ပံ့ပို့ဆောင်ရေး၊ ဟိုတယ်စီမံနှင့် မီဒီယာ နယ်ပယ်မျိုးစုံတွင် နည်းပညာပြည့်ဝမှုနှင့် လုပ်ငန်းအကျိုးကျေးဇူးကို ချိန်ခွင်ညီစေသည့် ဖြေရှင်းချက်များ ပေးအပ်ခဲ့ပါသည်။"
     },
     stats: {
       projects: { en: 'Projects', my: 'ပရောဂျက်များ' },
@@ -44,16 +45,22 @@ export const translations = {
       coffee: { en: 'Coffee Cups', my: 'ကော်ဖီခွက်များ' },
     }
   },
+  experience: {
+    label: { en: 'Experience', my: 'အတွေ့အကြုံ' },
+    titlePrefix: { en: 'Work', my: 'လုပ်ငန်း' },
+    titleHighlight: { en: 'History', my: 'သမိုင်းကြောင်း' },
+    subtitle: { en: '13+ years of professional experience across ERP development, software engineering, and IT administration', my: 'ERP ရေးဆွဲမှု၊ ဆော့ဖ်ဝဲအင်ဂျင်နီယာနှင့် IT စီမံခန့်ခွဲမှု နယ်ပယ်တွင် ၁၃ နှစ်ကျော် ကျွမ်းကျင်မှုအတွေ့အကြုံ' },
+  },
   skills: {
     label: { en: 'Skills', my: 'ကျွမ်းကျင်မှုများ' },
     titlePrefix: { en: 'My', my: 'ကျွန်ုပ်၏' },
     titleHighlight: { en: 'Tech Stack', my: 'နည်းပညာများ' },
     subtitle: { en: 'Technologies and tools I use to bring ideas to life', my: 'အိုင်ဒီယာများကို အကောင်အထည်ဖော်ရန် ကျွန်ုပ်အသုံးပြုသော နည်းပညာနှင့် ကိရိယာများ' },
     categories: {
-      frontend: { en: 'Frontend', my: 'Frontend' },
-      backend: { en: 'Backend', my: 'Backend' },
-      tools: { en: 'Tools & DevOps', my: 'Tools & DevOps' },
-      design: { en: 'Design & Other', my: 'Design & Other' }
+      frontend: { en: 'ERP & Backend', my: 'ERP နှင့် Backend' },
+      backend: { en: 'Web Development', my: 'ဝက်ဘ်ဆော့ဖ်ဝဲ' },
+      tools: { en: 'Cloud & DevOps', my: 'Cloud နှင့် DevOps' },
+      design: { en: 'AI & Tools', my: 'AI နှင့် ကိရိယာများ' }
     }
   },
   projects: {
@@ -73,10 +80,19 @@ export const translations = {
       'nextbooking': {
         en: 'A modern beauty salon booking system where customers book appointments online and admins manage services, staff, and schedules. Built with Next.js, Supabase, and real-time availability checking.',
         my: 'ဖောက်သည်များ အွန်လိုင်းမှ ချိန်းဆိုနိုင်ပြီး admin များ ဝန်ဆောင်မှုများ၊ ဝန်ထမ်းများနှင့် အချိန်ဇယားများကို စီမံနိုင်သော ခေတ်မီ သင်္ဘောရေကန်ချိန်းဆိုမှုစနစ်။ Next.js နှင့် Supabase ဖြင့် တည်ဆောက်ထားပါသည်။'
+      },
+      'odoo-modules': {
+        en: 'Custom Odoo 17 modules covering inventory, accounting, logistics, and hotel management — including QWeb PDF reports, Record Rules, and cloud deployment on DigitalOcean.',
+        my: 'Inventory၊ Accounting၊ Logistics နှင့် Hotel Management ကို ခြုံငုံသော Custom Odoo 17 modules များ — QWeb PDF reports၊ Record Rules နှင့် DigitalOcean တွင် cloud deployment ပါဝင်သည်။'
       }
     },
     demo: { en: 'Live Demo', my: 'အစမ်းကြည့်ရန်' },
     source: { en: 'Source', my: 'ရင်းမြစ်ကုဒ်' }
+  },
+  certifications: {
+    label: { en: 'Certifications', my: 'လက်မှတ်များ' },
+    titlePrefix: { en: 'Professional', my: 'ပရော်ဖက်ရှင်နယ်' },
+    titleHighlight: { en: 'Certifications', my: 'လက်မှတ်များ' },
   },
   contact: {
     label: { en: 'Contact', my: 'ဆက်သွယ်ရန်' },

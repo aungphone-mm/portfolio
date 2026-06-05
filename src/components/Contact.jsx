@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, MapPin, Phone, Github, Linkedin, Twitter, Loader2 } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, Twitter, Globe, Loader2 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { portfolioData } from '@/data/portfolioData';
 import styles from './Contact.module.css';
@@ -83,21 +83,15 @@ export default function Contact() {
                   <div className={styles.infoValue}>{mounted ? t('contact', 'locationValue') : ''}</div>
                 </div>
               </div>
-              <div className={`glass-card ${styles.infoCard}`}>
-                <div className={styles.infoIcon}><Phone size={20} /></div>
-                <div>
-                  <div className={styles.infoLabel}>{mounted ? t('contact', 'phone') : ''}</div>
-                  <div className={styles.infoValue}>{portfolioData.contact.phone}</div>
-                </div>
-              </div>
             </div>
 
             <div className={styles.socialSection}>
               <h4 className={styles.socialTitle}>{mounted ? t('contact', 'follow') : ''}</h4>
               <div className={styles.socialLinks}>
-                <a href={portfolioData.social.github} className={styles.socialLink} aria-label="GitHub"><Github size={20} /></a>
-                <a href={portfolioData.social.linkedin} className={styles.socialLink} aria-label="LinkedIn"><Linkedin size={20} /></a>
-                <a href={portfolioData.social.twitter} className={styles.socialLink} aria-label="Twitter"><Twitter size={20} /></a>
+                <a href={portfolioData.social.github} className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={20} /></a>
+                <a href={portfolioData.social.linkedin} className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                <a href={portfolioData.social.twitter} className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="Twitter"><Twitter size={20} /></a>
+                <a href={portfolioData.social.website} className={styles.socialLink} target="_blank" rel="noopener noreferrer" aria-label="Website"><Globe size={20} /></a>
               </div>
             </div>
           </motion.div>

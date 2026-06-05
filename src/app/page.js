@@ -1,7 +1,9 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
+import Certifications from '@/components/Certifications';
 import Projects from '@/components/Projects';
 import EmailAssistant from '@/components/EmailAssistant';
 import Contact from '@/components/Contact';
@@ -16,7 +18,11 @@ export default function Home() {
         <hr className="glow-line" />
         <About />
         <hr className="glow-line" />
+        <Experience />
+        <hr className="glow-line" />
         <Skills />
+        <hr className="glow-line" />
+        <Certifications />
         <hr className="glow-line" />
         <Projects />
         <hr className="glow-line" />
